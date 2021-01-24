@@ -2,4 +2,5 @@
     <string name="app_name">MoneyClap Admin</string>
     <string name="slogan">Transfert d\'argent Gabon France!</string>
     <string name="feature">Feature</string>
+    <string name="notifications">notification</string>
 </resources>
