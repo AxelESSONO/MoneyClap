@@ -3,6 +3,7 @@ package com.edouardondo.moneyclap.controller.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.edouardondo.moneyclap.R
 import kotlinx.android.synthetic.main.activity_login.*
@@ -17,7 +18,6 @@ class LoginActivity : AppCompatActivity() {
         )
         setContentView(R.layout.activity_login)
 
-
         login_btn.setOnClickListener {
             login()
         }
@@ -25,10 +25,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login() {
-        val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-        intent.putExtra("Email", email_edt.text.toString().trim())
-        intent.putExtra("Password", password_edt.text.toString().trim())
-        startActivity(intent)
-        finish()
+
+        if (email_edt.text.toString().trim().isEmpty() || password_edt.text.toString().trim().isEmpty())
+        {
+            Toast.makeText(applicationContext, "Please type email and password", Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            intent.putExtra("Email", email_edt.text.toString().trim())
+            intent.putExtra("Password", password_edt.text.toString().trim())
+            startActivity(intent)
+            finish()
+        }
     }
 }

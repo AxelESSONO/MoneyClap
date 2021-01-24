@@ -13,6 +13,10 @@ class HomeActivity : AppCompatActivity() {
 
     var toolbar: Toolbar? = null
 
+    var email : String? = null
+    var password : String? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -23,6 +27,9 @@ class HomeActivity : AppCompatActivity() {
         supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorTextBackgroundSecondary)))
 
         supportActionBar?.title = getString(R.string.app_name)
+
+        email = intent.getStringExtra("Email")
+        password = intent.getStringExtra("Password")
 
     }
 
