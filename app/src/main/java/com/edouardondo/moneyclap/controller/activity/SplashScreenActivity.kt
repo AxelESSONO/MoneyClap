@@ -3,11 +3,13 @@ package com.edouardondo.moneyclap.controller.activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.edouardondo.moneyclap.R
 
@@ -19,6 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     lateinit var logo_image : ImageView
     lateinit var slogan_text: TextView
+    lateinit var progress_circular: ProgressBar
 
     private val SPLASH_SCREEN: Long = 5000
 
@@ -34,14 +37,21 @@ class SplashScreenActivity : AppCompatActivity() {
         // Hooks
         logo_image = findViewById<ImageView>(R.id.logo_image)
         slogan_text = findViewById<TextView>(R.id.slogan_text)
+        progress_circular = findViewById<ProgressBar>(R.id.progress_circular)
+
+        progress_circular.visibility = View.VISIBLE
 
         // set Animation
         logo_image.animation = topAnimation
         slogan_text.animation = bottomAnimation
+        progress_circular.animation = bottomAnimation
+
+
 
         Handler().postDelayed({
             val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
             startActivity(intent)
+            progress_circular.visibility = View.GONE
             finish()
         }, SPLASH_SCREEN)
 
