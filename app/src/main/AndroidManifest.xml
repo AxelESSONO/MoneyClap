@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyClap">
+        <activity android:name=".controller.activity.LoginActivity"></activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
         <activity android:name=".controller.MainActivity" />
         <activity android:name=".controller.activity.HomeActivity" />
         <activity android:name=".controller.activity.SplashScreenActivity">
