@@ -17,7 +17,11 @@ class LoginActivity : AppCompatActivity() {
         )
         setContentView(R.layout.activity_login)
 
-        login()
+
+        login_btn.setOnClickListener {
+            login()
+        }
+
     }
 
     fun login() {
