@@ -8,17 +8,25 @@
     android:background="@color/colorBackground"
     tools:context=".controller.activity.HomeActivity">
 
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_home"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/relative_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        tools:listitem="@layout/feature_item"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:spanCount="2"
+            tools:listitem="@layout/feature_item"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
