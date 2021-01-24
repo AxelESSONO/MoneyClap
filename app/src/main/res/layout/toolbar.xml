@@ -16,28 +16,16 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white">
-
-            <ImageView
-                android:id="@+id/logo_image"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/ic_money_clap"/>
+            android:background="@color/colorTextBackground">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
                 android:textSize="18sp"
-                android:textColor="@color/colorTextBackground"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_centerInParent="true"/>
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"/>
 
         </RelativeLayout>
 
