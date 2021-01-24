@@ -53,6 +53,7 @@
                 android:gravity="center">
 
                 <EditText
+                    android:id="@+id/email_edt"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/all_radius_10dp"
@@ -60,7 +61,7 @@
                     android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
                     android:paddingRight="5dp"
-                    android:hint="moneyclap.admin@moneyclap.com"
+                    android:hint="moneyclap@moneyclap.com"
                     android:drawableStart="@drawable/ic_baseline_email_24"
                     android:drawablePadding="5dp"
                     android:gravity="start|center_vertical"
@@ -68,6 +69,7 @@
                     android:textColorHint="@android:color/darker_gray"/>
 
                 <EditText
+                    android:id="@+id/password_edt"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
