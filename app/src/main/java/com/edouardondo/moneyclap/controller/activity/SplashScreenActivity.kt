@@ -40,7 +40,7 @@ class SplashScreenActivity : AppCompatActivity() {
         slogan_text.animation = bottomAnimation
 
         Handler().postDelayed({
-            val intent = Intent(this@SplashScreenActivity, HomeActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_SCREEN)
