@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
     tools:context=".controller.activity.SplashScreenActivity">
 
     <ImageView
@@ -13,7 +12,8 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/ic_money_clap"
-        android:layout_centerInParent="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 
     <TextView
         android:id="@+id/slogan_text"
@@ -23,6 +23,16 @@
         android:layout_below="@id/logo_image"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/black"/>
+        android:textStyle="bold"
+        android:textColor="@color/colorTextBackground"/>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/slogan_text"
+        android:layout_centerHorizontal="true"
+        android:progressTint="@color/colorTextBackground"/>
 
 </RelativeLayout>
