@@ -13,4 +13,5 @@
     <color name="colorBackground">#E1E1E4</color>
     <color name="colorTextBackground">#0d044e</color>
     <color name="colorTextBackgroundSecondary">#16068E</color>
+    <color name="colorWindowBackground">#FFE8EBEF</color>
 </resources>
