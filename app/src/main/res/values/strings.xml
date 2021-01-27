@@ -15,6 +15,6 @@
 
     <string name="password_hint">• • • • • • • • • • •</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Devis</string>
+    <string name="tab_text_2">Transactions</string>
 </resources>
