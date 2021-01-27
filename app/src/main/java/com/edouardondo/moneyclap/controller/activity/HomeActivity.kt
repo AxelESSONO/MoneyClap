@@ -1,32 +1,46 @@
 package com.edouardondo.moneyclap.controller.activity
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import androidx.viewpager.widget.ViewPager
 import com.edouardondo.moneyclap.R
-import com.edouardondo.moneyclap.controller.activity.ui.main.SectionsPagerAdapter
+import com.edouardondo.moneyclap.adapter.ViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
 
 class HomeActivity : AppCompatActivity() {
+
+    lateinit var viewPager: ViewPager
+    lateinit var tablayout: TabLayout
+    lateinit var adapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
-        val viewPager: ViewPager = findViewById(R.id.view_pager)
-        viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.tabs)
-        tabs.setupWithViewPager(viewPager)
-        val fab: FloatingActionButton = findViewById(R.id.fab)
+        /** ------------Bind viewPager and tablayout -----------------**/
+        viewPager = findViewById(R.id.view_pager)
+        tablayout = findViewById(R.id.tablayout)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        /** -------------- Named tabs ------------------**/
+        tablayout.addTab(tablayout.newTab().setText("Devis"))
+        tablayout.addTab(tablayout.newTab().setText("Transaction"))
+
+        /** --------------- Center gravity ----------- **/
+        tablayout.tabGravity = TabLayout.GRAVITY_FILL
+
+        /** --------------- Init viewpager adapter ----------- **/
+        adapter = ViewPagerAdapter(this, supportFragmentManager, tablayout.tabCount)
+        viewPager.adapter = adapter
+
+        /** -------------- **/
+        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tablayout))
+        tablayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                viewPager.currentItem = tab!!.position
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+        })
     }
 }
