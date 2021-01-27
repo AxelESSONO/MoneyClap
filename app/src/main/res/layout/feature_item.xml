@@ -14,12 +14,13 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/feature_img"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:src="@drawable/devis"/>
 
         <TextView
-            android:id="@+id/feature_item"
+            android:id="@+id/feature_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/bottom_radius"
