@@ -13,6 +13,7 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_money_clap"
         android:elevation="10dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -26,7 +27,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:background="@color/colorTextBackground"
+        android:background="@drawable/gradient_background"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.cardview.widget.CardView
