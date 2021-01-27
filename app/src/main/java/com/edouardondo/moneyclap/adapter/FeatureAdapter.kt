@@ -31,7 +31,6 @@ class FeatureAdapter(var featureList : Array<Feature>, val listener: (Feature) -
             itemView.feature_name.text = feature.featureName!!
             itemView.feature_name.setOnClickListener { listener(feature) }
             setOnClickListener { listener(feature) }
-
         }
     }
 }
