@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.edouardondo.moneyclap.R
-import com.edouardondo.moneyclap.model.Feature
+import com.edouardondo.moneyclap.model.devis.Feature
 import kotlinx.android.synthetic.main.feature_item.view.*
 
 class FeatureAdapter(var featureList : Array<Feature>, val listener: (Feature) -> Unit)
