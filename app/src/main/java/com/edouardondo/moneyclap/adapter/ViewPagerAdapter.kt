@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.edouardondo.moneyclap.controller.fragment.AccountingFragment
 import com.edouardondo.moneyclap.controller.fragment.DevisFragment
 import com.edouardondo.moneyclap.controller.fragment.TransactionFragment
 
@@ -21,6 +22,7 @@ class ViewPagerAdapter(
         return when (position) {
             0 -> DevisFragment()
             1 -> TransactionFragment()
+            2 -> AccountingFragment()
             else -> getItem(position)
         }
     }

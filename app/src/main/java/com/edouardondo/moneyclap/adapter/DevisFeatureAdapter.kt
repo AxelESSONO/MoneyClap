@@ -12,7 +12,8 @@ class DevisFeatureAdapter(val devisFeatureList : Array<DevisFeature>,
                           val listener: (DevisFeature) -> Unit):
 RecyclerView.Adapter<DevisFeatureAdapter.DevisFeatureAdapterHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DevisFeatureAdapterHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
+            DevisFeatureAdapterHolder {
         val allDevisFeatureView: View = LayoutInflater.from(parent.context).inflate(R.layout.devis_feature_item, parent, false)
         return DevisFeatureAdapterHolder(allDevisFeatureView)
     }
@@ -23,7 +24,8 @@ RecyclerView.Adapter<DevisFeatureAdapter.DevisFeatureAdapterHolder>(){
 
     override fun getItemCount(): Int = devisFeatureList.size
 
-    inner class DevisFeatureAdapterHolder(devisFeatureItem : View):RecyclerView.ViewHolder(devisFeatureItem)
+    inner class DevisFeatureAdapterHolder(devisFeatureItem : View)
+        :RecyclerView.ViewHolder(devisFeatureItem)
     {
         fun bindAllFeature(devisFeature : DevisFeature, listener: (DevisFeature) -> Unit) =
             with(itemView){
