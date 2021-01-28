@@ -13,6 +13,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var tablayout: TabLayout
     lateinit var adapter: ViewPagerAdapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -24,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         /** -------------- Named tabs ------------------**/
         tablayout.addTab(tablayout.newTab().setText("Devis"))
         tablayout.addTab(tablayout.newTab().setText("Transaction"))
+        tablayout.addTab(tablayout.newTab().setText("Comptabilité"))
 
         /** --------------- Center gravity ----------- **/
         tablayout.tabGravity = TabLayout.GRAVITY_FILL
@@ -43,4 +45,5 @@ class HomeActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
     }
+
 }
