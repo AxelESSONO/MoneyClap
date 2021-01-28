@@ -1,20 +1,19 @@
 package com.edouardondo.moneyclap.controller.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
-
 import androidx.recyclerview.widget.RecyclerView
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.edouardondo.moneyclap.R
 import com.edouardondo.moneyclap.adapter.DevisFeatureAdapter
+import com.edouardondo.moneyclap.controller.activity.DevisActivity
 import com.edouardondo.moneyclap.database.SourceData
+import com.edouardondo.moneyclap.model.devis.DevisFeature
 
 
 class DevisFragment : Fragment() {
@@ -36,9 +35,16 @@ class DevisFragment : Fragment() {
         recyclerView.itemAnimator = DefaultItemAnimator()
 
         recyclerView.adapter = DevisFeatureAdapter(SourceData.devisFeatureList.toTypedArray()){
-            Toast.makeText(context, it.name, Toast.LENGTH_SHORT).show()
+            gotoDevisActivity(it)
         }
 
         return rootView
     }
+
+    private fun gotoDevisActivity(it: DevisFeature) {
+        val intent : Intent = Intent(requireActivity(), DevisActivity::class.java)
+        intent.putExtra("DEVIS_FEATURE", it.name)
+        context?.startActivity(intent)
+    }
+
 }
