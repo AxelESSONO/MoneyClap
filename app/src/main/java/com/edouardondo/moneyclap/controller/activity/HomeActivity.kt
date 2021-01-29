@@ -26,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
         tablayout.addTab(tablayout.newTab().setText("Devis"))
         tablayout.addTab(tablayout.newTab().setText("Transaction"))
         tablayout.addTab(tablayout.newTab().setText("Comptabilité"))
+        tablayout.addTab(tablayout.newTab().setText("Clients"))
 
         /** --------------- Center gravity ----------- **/
         tablayout.tabGravity = TabLayout.GRAVITY_FILL
