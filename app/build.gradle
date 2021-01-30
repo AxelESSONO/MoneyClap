@@ -72,6 +72,9 @@ dependencies {
     /** ANKO **/
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
+    /** Stepper View **/
+    implementation 'com.stepstone.stepper:material-stepper:3.2.3'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
