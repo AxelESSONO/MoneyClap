@@ -13,7 +13,8 @@
         android:layout_height="250dp"
         android:src="@drawable/ic_money_clap"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/slogan_text"

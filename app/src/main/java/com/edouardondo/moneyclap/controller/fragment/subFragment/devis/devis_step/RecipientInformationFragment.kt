@@ -18,11 +18,7 @@ class RecipientInformationFragment : Fragment(), Step, BlockingStep {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView: View = inflater.inflate(
-            R.layout.fragment_recipient_information,
-            container,
-            false
-        )
+        val rootView: View = inflater.inflate(R.layout.fragment_recipient_information, container, false)
         return rootView
     }
 
