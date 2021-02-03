@@ -26,7 +26,6 @@ class DevisActivity : AppCompatActivity() {
         }
 
         val data = intent.getStringExtra("DEVIS_FEATURE")
-        replaceFragment(data, R.id.frame_devis_container)
     }
 
     private fun replaceFragment(devisFeatureName: String, id: Int) {

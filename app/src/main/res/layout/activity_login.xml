@@ -109,7 +109,7 @@
                         android:background="@drawable/gradient_background"/>
 
                     <EditText
-                        android:id="@+id/lastname_edt"
+                        android:id="@+id/password_edt"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_toRightOf="@id/view"
