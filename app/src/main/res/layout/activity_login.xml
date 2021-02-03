@@ -45,13 +45,34 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
+                <!-- Lastname -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/lastname_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_person_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <View
+                        android:id="@+id/lastname_view_from"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toRightOf="@id/lastname_img"
+                        android:background="@drawable/gradient_background"/>
+
                     <EditText
                         android:id="@+id/email_edt"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:background="@drawable/all_radius_10dp"
-                        android:drawableStart="@drawable/ic_baseline_email_24"
-                        android:drawablePadding="10dp"
+                        android:layout_toRightOf="@id/lastname_view_from"
                         android:gravity="start|center_vertical"
                         android:hint="e-mail"
                         android:inputType="textEmailAddress"
@@ -59,16 +80,39 @@
                         android:paddingRight="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@android:color/darker_gray"
-                        android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
+
+                <!-- password -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/password_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_person_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toRightOf="@id/password_img"
+                        android:background="@drawable/gradient_background"/>
 
                     <EditText
-                        android:id="@+id/password_edt"
+                        android:id="@+id/lastname_edt"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/all_radius_10dp"
-                        android:drawableStart="@drawable/ic_baseline_lock_24"
-                        android:drawablePadding="10dp"
+                        android:layout_toRightOf="@id/view"
                         android:gravity="start|center_vertical"
                         android:hint="mot de passe"
                         android:inputType="textPassword"
@@ -76,7 +120,10 @@
                         android:paddingRight="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@android:color/darker_gray"
-                        android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
