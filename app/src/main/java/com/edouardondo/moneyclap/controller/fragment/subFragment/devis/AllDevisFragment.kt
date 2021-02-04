@@ -15,7 +15,8 @@ class AllDevisFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_all_devis, container, false)
+        val rootView : View = inflater.inflate(R.layout.fragment_all_devis, container, false)
+        return rootView
     }
 
 }
