@@ -22,8 +22,6 @@ class EditDevisFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_edit_devis, container, false)
 
-
-
         return rootView
     }
 

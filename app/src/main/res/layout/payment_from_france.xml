@@ -20,11 +20,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/airtel_img"
+                android:id="@+id/paypal_img"
                 android:layout_width="match_parent"
                 android:layout_height="115dp"
-                android:src="@drawable/airtel_money"
-                android:scaleType="fitXY"
+                android:src="@drawable/paypal"
+                android:scaleType="centerInside"
+                android:padding="5dp"
                 android:layout_alignParentTop="true"/>
 
             <View
@@ -32,12 +33,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorWindowBackground"
-                android:layout_below="@id/airtel_img"/>
+                android:layout_below="@id/paypal_img"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="Airtel money"
+                android:text="Paypal"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15sp"
@@ -64,11 +65,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/mobicash_img"
+                android:id="@+id/credit_cart_img"
                 android:layout_width="match_parent"
                 android:layout_height="115dp"
-                android:src="@drawable/mobiash"
-                android:scaleType="fitXY"
+                android:padding="5dp"
+                android:src="@drawable/credit_card"
+                android:scaleType="centerInside"
                 android:layout_alignParentTop="true"/>
 
             <View
@@ -76,12 +78,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorWindowBackground"
-                android:layout_below="@id/mobicash_img"/>
+                android:layout_below="@id/credit_cart_img"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="MobiCash"
+                android:text="Carte Bancaire"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15sp"
