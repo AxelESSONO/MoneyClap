@@ -5,11 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".controller.fragment.subFragment.devis.EditDevisFragment">
+    tools:context=".controller.activity.EditDevisActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background"
+        android:theme="@style/Theme.MoneyClap.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:minHeight="?actionBarSize"
+                android:padding="@dimen/appbar_padding"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/new_devis_btn"
+        android:layout_below="@id/app_bar_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,13 +52,11 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
-
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="8dp"
-
                 app:cardElevation="3dp"
                 app:cardPreventCornerOverlap="false">
 
@@ -59,12 +87,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="0dp"
                             android:gravity="center_horizontal|center_vertical"
-                            app:ccp_customMasterCountries="FR,GA"
                             app:ccp_defaultNameCode="@string/country_france_code"
                             app:ccp_hideNameCode="true"
                             app:ccp_showFullName="true"
-                            app:ccp_textSize="18sp"/>
+                            app:ccp_textSize="18sp" />
 
                     </RelativeLayout>
 
@@ -83,7 +111,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/phone_number_from_edt"
+                            android:id="@+id/amount_to_pay_edt"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:layout_centerVertical="true"
@@ -137,6 +165,7 @@
                             android:orientation="horizontal">
 
                             <RadioButton
+                                android:id="@+id/radio_yes"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="10dp"
@@ -144,6 +173,7 @@
                                 android:text="Oui" />
 
                             <RadioButton
+                                android:id="@+id/radio_no"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="false"
@@ -163,7 +193,6 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
-
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:divider="@android:color/transparent"
@@ -201,7 +230,6 @@
                             android:layout_height="40dp"
                             android:layout_alignParentEnd="true"
                             android:gravity="center_horizontal|center_vertical"
-                            app:ccp_customMasterCountries="FR,GA"
                             app:ccp_defaultNameCode="@string/country_gabon_code"
                             app:ccp_hideNameCode="true"
                             app:ccp_showFullName="true"
@@ -224,7 +252,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/phone_number_to_edt"
+                            android:id="@+id/received_amount_edt"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:layout_centerVertical="true"
@@ -265,13 +293,11 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
-
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="8dp"
-
                 app:cardElevation="3dp"
                 app:cardPreventCornerOverlap="false">
 
@@ -298,7 +324,7 @@
                     <include
                         android:id="@+id/payment_from_gabon"
                         layout="@layout/payment_from_gabon"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
 
                     <include
                         android:id="@+id/payment_from_france"
@@ -331,6 +357,7 @@
                     android:padding="10dp">
 
                     <EditText
+                        android:id="@+id/coupon_edt"
                         android:layout_width="250dp"
                         android:layout_height="40dp"
                         android:layout_alignParentStart="true"
@@ -361,13 +388,11 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
                 android:background="@null"
-
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="8dp"
-
                 app:cardElevation="3dp"
                 app:cardPreventCornerOverlap="false">
 
@@ -412,6 +437,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/withdrawal_fee"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -438,6 +464,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/commission"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -514,7 +541,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/gradient_background"
         android:enabled="false"
-        android:text="Editer le devis"
+        android:text="Voir le resultat"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />

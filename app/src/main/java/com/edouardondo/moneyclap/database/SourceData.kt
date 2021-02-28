@@ -1,6 +1,8 @@
 package com.edouardondo.moneyclap.database
 
 import com.edouardondo.moneyclap.R
+import com.edouardondo.moneyclap.model.customer.Customer
+import com.edouardondo.moneyclap.model.devis.Devis
 import com.edouardondo.moneyclap.model.devis.DevisFeature
 import com.edouardondo.moneyclap.model.devis.Feature
 import com.edouardondo.moneyclap.model.devis.Transaction
@@ -9,7 +11,7 @@ abstract class SourceData
 {
     companion object
     {
-        val featureList = mutableListOf<Feature>()
+
 
         val devisFeatureList = mutableListOf<DevisFeature>(
             DevisFeature(R.drawable.ic_devis_edit,"Faire un devis".toUpperCase()),
@@ -25,6 +27,501 @@ abstract class SourceData
             Transaction(4,"Transactions effectuées", R.drawable.ic_done),
             Transaction(5,"Transactions annulées", R.drawable.ic_baseline_cancel_24), //
             Transaction(6,"Annuler une transaction", R.drawable.ic_cancel_transaction),
+        )
+
+        val devisId = mutableListOf<String>(
+            "REDIKDKF645",
+            "DEYUI8596",
+            "RTOUY4856",
+            "REDGB86932"
+        )
+        //Devis(var ref: String, var customer: Customer, var recipient: Customer, var countryFrom: String, var to: String,
+        //  var amountSent: Float, var amountReceived: Float, var date: String, var time: String, var transactionFees: String)
+
+        //Customer( var id: String, var customerType : String, var customerCountry: String, var customerCity: String,
+        //var customerPhoneNumber : String="", var firstName: String = "", var lastName: String = "")
+
+        var devisList = mutableListOf<Devis>(
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
+            Devis("GAFR85285285",
+                Customer("userId", "Sender", "France", "Paris",
+                    "", "Edouard", "Ondo"),
+                "receiverId2020", "France", "Gabon", 8000F,
+                5_000_000F, "24 02 2021", "15h45min", 100F),
+
         )
     }
 }

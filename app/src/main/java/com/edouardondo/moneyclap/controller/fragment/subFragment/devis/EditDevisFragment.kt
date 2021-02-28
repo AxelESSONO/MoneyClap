@@ -7,9 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.edouardondo.moneyclap.R
-import com.edouardondo.moneyclap.adapter.DevisFormStepperAdapter
-import com.stepstone.stepper.StepperLayout
-import com.stepstone.stepper.VerificationError
 
 class EditDevisFragment : Fragment() {
 
@@ -21,6 +18,8 @@ class EditDevisFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_edit_devis, container, false)
+
+        Toast.makeText(context, "EDIT FRAGMENT", Toast.LENGTH_SHORT).show()
 
         return rootView
     }

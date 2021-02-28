@@ -1,9 +1,10 @@
 package com.edouardondo.moneyclap.model.customer
 
 data class Customer(
-    var customerId: String,
-    var firstName: String,
-    var lastName: String,
-    var customerPhoneNumber : String,
+    var id: String,
+    var customerType : String,
+    var customerCountry: String,
     var customerCity: String,
-    var customerCountry: String)
+    var customerPhoneNumber : String="",
+    var firstName: String = "",
+    var lastName: String = "")

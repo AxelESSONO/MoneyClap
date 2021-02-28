@@ -2,21 +2,8 @@
     <string name="app_name">MoneyClap Admin</string>
     <string name="slogan">Transfert money from between France ans Gabon</string>
     <string name="feature">Feature</string>
-    <string name="notifications">notification</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
-    <string name="password_hint">• • • • • • • • • • •</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="tab_text_1">Devis</string>
-    <string name="tab_text_2">Transactions</string>
+    <string name="no_data_found">Pas de données enregistrées pour le moment</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
