@@ -28,10 +28,24 @@ RecyclerView.Adapter<TransactionAdapter.TransactionAdapterHolder>(){
     {
         fun bindAllTransaction(transaction : Transaction, listener: (Transaction) -> Unit) =
             with(itemView){
-                itemView.transaction_btn.text = transaction.transactionName
-                itemView.transaction_img.setImageResource(transaction.transactionImage)
+                itemView.transactionId.text = transaction.transactionId
+
+                itemView.profile_img.setImageResource(transaction.sender.image)
+
+                itemView.name.text = transaction.sender.lastName
+                itemView.firstname.text = transaction.sender.firstName
+
+                itemView.receiver_firstname.text = transaction.receiver.firstName
+                itemView.receiver_name.text = transaction.receiver.lastName
+
+                itemView.date_value.text = transaction.date
+                itemView.account_send.text = transaction.amountSent
+                itemView.account_received.text = transaction.amountReceived
+
+                itemView.fee_account_intern.text = transaction.feeIntern
+                itemView.fee_account.text = transaction.fee
+
                 setOnClickListener { listener(transaction) }
-                itemView.transaction_btn.setOnClickListener { listener(transaction) }
             }
     }
 }

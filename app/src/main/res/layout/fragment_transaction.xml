@@ -11,9 +11,8 @@
       android:id="@+id/recycler_transaction"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="5dp"
-      tools:listitem="@layout/transaction_item"
-      app:spanCount="2"
-      app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+      android:orientation="vertical"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:listitem="@layout/transaction_item" />
 
 </RelativeLayout>

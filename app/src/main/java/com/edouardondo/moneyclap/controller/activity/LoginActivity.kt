@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (email_edt.text.toString().trim().isEmpty() || password_edt.text.toString().trim().isEmpty())
         {
-            Toast.makeText(applicationContext, "Please type email and password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Veuillez saisir votre e-mail et votre mot de passe", Toast.LENGTH_SHORT).show()
         }
         else
         {

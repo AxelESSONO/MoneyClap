@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.SearchView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.edouardondo.moneyclap.R
 import com.edouardondo.moneyclap.adapter.DevisAdapter
 import com.edouardondo.moneyclap.controller.activity.EditDevisActivity
-import com.edouardondo.moneyclap.controller.fragment.subFragment.devis.EditDevisFragment
 import com.edouardondo.moneyclap.database.SourceData
+import java.util.*
 
 
 @Suppress("DEPRECATION")
@@ -25,11 +26,14 @@ class DevisFragment : Fragment() {
     // Bind View
     lateinit var recyclerView: RecyclerView
     lateinit var layoutManager: LinearLayoutManager
-    lateinit var linearLayout : LinearLayout
+    lateinit var linearLayout: LinearLayout
     lateinit var editDevisButton: Button
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
-    {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_devis, container, false)
@@ -38,11 +42,15 @@ class DevisFragment : Fragment() {
         linearLayout = rootView.findViewById(R.id.linear_data_empty)
         editDevisButton = rootView.findViewById(R.id.edit_devis_btn)
 
+        val searchView = requireActivity().findViewById<SearchView>(R.id.research_filter)
+
+        val array = SourceData.devisList
+
         var allDevis = SourceData.devisList
 
-        if (allDevis.size == 0){
+        if (allDevis.size == 0) {
             linearLayout.visibility = View.VISIBLE
-        }else{
+        } else {
             linearLayout.visibility = View.GONE
             layoutManager = LinearLayoutManager(context)
             layoutManager.orientation = LinearLayoutManager.VERTICAL
@@ -55,6 +63,32 @@ class DevisFragment : Fragment() {
             val intent = Intent(activity, EditDevisActivity::class.java)
             activity?.startActivity(intent)
         }
+
+    /*    searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                requireActivity().findViewById<TextView>(R.id.title).visibility = View.GONE
+                searchView.background =
+                    requireActivity().resources.getDrawable(R.drawable.transparent_background)
+                if (newText!!.isNotEmpty()) {
+                    SourceData.devisList.clear()
+                    val search = newText.toLowerCase()
+                    array.forEach {
+                        if (it.ref.toLowerCase().contains(search)) {
+                            SourceData.devisList.add(it)
+                        }
+                    }
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                } else {
+                    SourceData.devisList.addAll(array)
+                    recyclerView.adapter!!.notifyDataSetChanged()
+                }
+                return true
+            }
+        })*/
 
         return rootView
     }

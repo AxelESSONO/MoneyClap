@@ -5,5 +5,6 @@
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="no_data_found">Pas de données enregistrées pour le moment</string>
+    <string name="exp_diteur"> Expéditeur</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

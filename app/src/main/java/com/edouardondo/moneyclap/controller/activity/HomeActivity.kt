@@ -1,6 +1,8 @@
 package com.edouardondo.moneyclap.controller.activity
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.SearchView
@@ -9,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.edouardondo.moneyclap.R
 import com.edouardondo.moneyclap.adapter.ViewPagerAdapter
+import com.edouardondo.moneyclap.database.SourceData
 import com.google.android.material.tabs.TabLayout
 
 class HomeActivity : AppCompatActivity() {
@@ -19,10 +22,6 @@ class HomeActivity : AppCompatActivity() {
     lateinit var adapter: ViewPagerAdapter
     lateinit var researchFilter: SearchView
     lateinit var title: TextView
-
-
-    val actionValue = listOf<String>("Nouveau devis", "Nouvelle Transaction", "Ajouter Client")
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,4 +59,17 @@ class HomeActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
     }
+
+  /*  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        val menuItem = menu!!.findItem(R.id.action_search)
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }*/
+
+
 }

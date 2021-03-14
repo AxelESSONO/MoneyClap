@@ -1,81 +1,163 @@
 package com.edouardondo.moneyclap.controller.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.edouardondo.moneyclap.R
+import com.rilixtech.widget.countrycodepicker.Country
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker
+import kotlinx.android.synthetic.main.activity_edit_devis.*
 
 class EditDevisActivity : AppCompatActivity() {
 
-    @BindView(R.id.ccp_from) lateinit var from : CountryCodePicker
-    @BindView(R.id.ccp_to) lateinit var to : CountryCodePicker
 
-    @BindView(R.id.amount_to_pay_edt) lateinit var amountToPayEdt : EditText
-    @BindView(R.id.received_amount_edt) lateinit var amountReceivedEdt : EditText
-    @BindView(R.id.coupon_edt) lateinit var couponEdt : EditText
+    lateinit var amountToPayEdt: EditText
+    lateinit var amountReceivedEdt: EditText
+    lateinit var couponEdt: EditText
 
-    @BindView(R.id.currency_from) lateinit var currencyFrom : TextView
-    @BindView(R.id.currency_to) lateinit var currencyTo : TextView
+    /** =================== Currency ===================*/
+    lateinit var currencyFrom: TextView
+    lateinit var currencyTo: TextView
 
-    @BindView(R.id.radio_yes) lateinit var radioYes : RadioButton
-    @BindView(R.id.radio_no) lateinit var radioNo : RadioButton
+    /** =================== Radio Button ===================*/
+    lateinit var radioYes : RadioButton
+    lateinit var radioNo : RadioButton
 
     /** ================= Payment way ====================*/
     // From Gabon
-    @BindView(R.id.payment_from_gabon) lateinit var linearFromGabon : LinearLayout
-    lateinit var airtelImg : ImageView
-    lateinit var mobicashImg : ImageView
+    lateinit var linearFromGabon: LinearLayout
+    lateinit var airtelImg: ImageView
+    lateinit var mobicashImg: ImageView
 
     // From France
-    @BindView(R.id.payment_from_france) lateinit var linearFromFrance : LinearLayout
-    lateinit var paypalImg : ImageView
-    lateinit var creditCartImg : ImageView
+    lateinit var linearFromFrance: LinearLayout
+    lateinit var paypalImg: ImageView
+    lateinit var creditCartImg: ImageView
 
     /** ================ Estimation ==================== */
-    @BindView(R.id.withdrawal_fee) lateinit var withdrawalFee : TextView
-    @BindView(R.id.commission) lateinit var commission : TextView
-    @BindView(R.id.total_account) lateinit var totalAccount : TextView
-    @BindView(R.id.total_account_received) lateinit var totalAccountReceived : TextView
+    lateinit var withdrawalFee: TextView
+    lateinit var commission: TextView
+    lateinit var totalAccount: TextView
+    lateinit var totalAccountReceived: TextView
+    lateinit var newDevisBtn: TextView
 
-
-    @BindView(R.id.new_devis_btn) lateinit var newDevisBtn : TextView
+    // Amount
+    var SAP: Float = 0.0f
+    var SRB: Float = 0.0f
+    var FT: Float = 0.0f
+    var FAM: Float = 0.0f
+    var FMC: Float = 0.0f
+    var SD: Float = 0.0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_devis)
-
-        /**
-         * SAP (Somme à Payer): c’est la somme que le client dépose sur le airtel money au Gabon ou par virement bancaire en France.
-         * SRB (Somme reçue par le bénéficiaire): c’est la somme que le bénéficiaire doit recevoir.
-         * FT (Frais de transfert):
-         * FAM (Frais de retrait AM) :
-         * SD (Somme déposer) :
-         * [TCVE]: Taux CFA Vers Euro, c'est le coefficient multiplicateur pour convertir les CFA en Euros il est de XXXXXX
-         * [TEVC]: Taux Euro Vers CFA, c'est le coefficient multiplicateur pour convertir les Euros en CFA il est de XXXXXX
-         * */
-
         ButterKnife.bind(this)
 
-     /*   if (this.from.defaultCountryNameCode == "fr"){
-            this.to.defaultCountryNameCode == "ga"
-        } else if (this.from.defaultCountryNameCode == "ga"){
-            this.to.defaultCountryNameCode == "fr"
-        }*/
+        /** Bind View */
+        bindView()
+
+        back.setOnClickListener {
+            onBackPressed()
+        }
+
+        setFeeChoice()
+        //linkAmount()
+
+        ccp_from.setOnCountryChangeListener(object : CountryCodePicker.OnCountryChangeListener {
+
+            override fun onCountrySelected(selectedCountry: Country?) {
+
+                if (selectedCountry?.phoneCode.equals("33")) {
+
+                    /** Payment fromFrance **/
+                    upDateUI(currencyList[1], currencyList[0], countryForNameCodeList[1],
+                        View.GONE, View.VISIBLE)
+
+                } else if (selectedCountry?.phoneCode.equals("241")) {
+
+                    /** Payment from Gabon **/
+                    upDateUI(currencyList[0], currencyList[1], countryForNameCodeList[0],
+                        View.VISIBLE, View.GONE)
+                }
+            }
+        })
+    }
+
+    private fun bindView() {
+        linearFromGabon = findViewById(R.id.payment_from_gabon)
+        linearFromFrance = findViewById(R.id.payment_from_france)
+
+        amountToPayEdt = findViewById(R.id.amount_to_pay_edt)
+        amountReceivedEdt = findViewById(R.id.received_amount_edt)
+
+        couponEdt = findViewById(R.id.coupon_edt)
+
+        currencyFrom = findViewById(R.id.currency_from)
+        currencyTo = findViewById(R.id.currency_to)
+
+        radioYes = findViewById(R.id.radio_yes)
+        radioNo = findViewById(R.id.radio_no)
+
+        withdrawalFee = findViewById(R.id.withdrawal_fee)
+        commission = findViewById(R.id.commission)
+        totalAccount = findViewById(R.id.total_account)
+        totalAccountReceived = findViewById(R.id.total_account_received)
+        newDevisBtn = findViewById(R.id.new_devis_btn)
+    }
+
+    private fun linkAmount() {
+        var amountToPay = amountToPayEdt.text.toString().trim()
+        var amountReceived = amountReceivedEdt.text.toString().trim()
+
+        SAP = amountToPay.toFloat()
+        SRB = amountReceived.toFloat()
+
+
+        FAM
+        FMC
+
+        SD
+
+        SRB = (SD - FT)*TCVE
+        SRB= SD*TCVE
+        SAP = SD+FT
+        SAP= SRB*TEVC + FT
+        //SRB= (SD-FT)*[TEVC ]
+
+        FT = 205.0f /** Frais internes : Commission*/
 
     }
 
-    companion object{
+    private fun upDateUI(currencyFrom: String, currenyTo: String,
+                         countryForNameCode: String, visibleFrom: Int, visibleTo: Int) {
 
-        /**
-         * [TCVE]: Taux CFA Vers Euro, c'est le coefficient multiplicateur pour convertir le CFA =====> Euros il est de
-         * [TEVC]: Taux Euro Vers CFA, c'est le coefficient multiplicateur pour convertir les Euros en CFA il est de XXXXXX
-         *
-         * */
-        const val TEVC = 655.957F
-        const val TCVE = 0.00152449F
+        currency_from.text = currencyFrom
+        currency_to.text = currenyTo
+        ccp_to.setCountryForNameCode(countryForNameCode)
+        linearFromGabon.visibility = visibleFrom
+        linearFromFrance.visibility = visibleTo
+
     }
 
+    private fun setFeeChoice() {
+        radio_yes.setOnClickListener {
+            radio_yes.isChecked = !radio_no.isChecked
+            radio_no.isChecked = !radio_yes.isChecked
+        }
+        radio_no.setOnClickListener {
+            radio_yes.isChecked = !radio_no.isChecked
+            radio_no.isChecked = !radio_yes.isChecked
+        }
+    }
+
+    companion object {
+        const val TEVC = 655.957f
+        const val TCVE = 0.00152449f
+        val currencyList = listOf<String>("FCFA", "EUROS")
+        val countryForNameCodeList = listOf<String>("fr", "ga")
+    }
 }
