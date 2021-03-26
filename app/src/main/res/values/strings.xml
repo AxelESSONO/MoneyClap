@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">MoneyClap Admin</string>
     <string name="slogan">Transfert money from between France ans Gabon</string>
     <string name="feature">Feature</string>
@@ -6,5 +6,29 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="no_data_found">Pas de données enregistrées pour le moment</string>
     <string name="exp_diteur"> Expéditeur</string>
+    <string name="example">example</string>
+    <string name="cat_gories">Catégories</string>
+    <string name="beneficiaire">Bénéficiaire</string>
+    <string name="envoyer_depuis">Pays expéditeur</string>
+    <string name="somme_envoyer">Somme à envoyer</string>
+    <string name="euros">EUROS</string>
+    <string name="frais_inclus">Frais inclus :</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
+    <string name="envoyer_vers">Pays destinataire :</string>
+    <string name="somme_recue">Somme reçue</string>
+    <string name="fcfa">FCFA</string>
+    <string name="votre_moyen_de_paiement">Votre moyen de paiement :</string>
+    <string name="coupon">Coupon</string>
+    <string name="appliquer_un_coupon">Appliquer un coupon</string>
+    <string name="estimation">Estimation</string>
+    <string name="frais_de_retrait">Frais de retrait</string>
+    <string name="commission">Commission :</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="devis">Votre Devis</string>
+    <string name="received_amount">Partir de la somme à recevoir ?</string>
+    <string name="gabon_france"><![CDATA[Gabon -> France]]></string>
+    <string name="france_gabon"><![CDATA[France -> Gabon]]></string>
+
 </resources>

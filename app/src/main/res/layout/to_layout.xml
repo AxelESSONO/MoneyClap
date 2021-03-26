@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:layout_marginTop="20dp"
+    android:background="@null"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_gravity="center"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0.0px"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWindowBackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/comeFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="start|center_vertical"
+                android:text="@string/envoyer_vers"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                android:id="@+id/ccp_to"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_horizontal|center_vertical"
+                app:ccp_defaultNameCode="@string/country_gabon_code"
+                app:ccp_hideNameCode="true"
+                app:ccp_showFullName="true"
+                app:ccp_textSize="18sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/transparent_background"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/received_amount_edt"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/view_to"
+                android:background="@android:color/transparent"
+                android:hint="@string/somme_recue"
+                android:inputType="numberSigned"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@android:color/darker_gray"/>
+
+            <View
+                android:id="@+id/view_to"
+                android:layout_width="1dp"
+                android:layout_height="45dp"
+                android:layout_toStartOf="@id/currency_to"
+                android:background="@drawable/gradient_background" />
+
+            <TextView
+                android:id="@+id/currency_to"
+                android:layout_width="80dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/fcfa"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

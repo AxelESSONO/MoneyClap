@@ -7,8 +7,15 @@
     <color name="black">#FF000000</color>
     <color name="blackLight">#FF323131</color>
 
+    <color name="colorSecondary">#FFF25652</color>
+
     <color name="white">#FFFFFFFF</color>
     <color name="colorTextBackground">#0d044e</color>
     <color name="colorTextBackgroundSecondary">#16068E</color>
     <color name="colorWindowBackground">#FFE8EBEF</color>
+
+    <color name="colorLinearLayout">#A1C5F4</color>
+    <color name="colorRedWeak">#FFF1F0</color>
+    <color name="colorRedLight">#F4847C</color>
+
 </resources>

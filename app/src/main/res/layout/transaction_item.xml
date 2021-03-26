@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
@@ -21,7 +22,9 @@
             android:text="@string/exp_diteur"
             android:textColor="@color/black"
             android:background="#D6D3D3"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -91,7 +94,9 @@
             android:text="Bénéfiaire"
             android:textColor="@color/black"
             android:background="#D6D3D3"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry"/>
 
         <LinearLayout
             android:layout_width="match_parent"

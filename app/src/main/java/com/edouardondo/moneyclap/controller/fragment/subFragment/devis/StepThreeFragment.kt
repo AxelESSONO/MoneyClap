@@ -1,15 +1,15 @@
 package com.edouardondo.moneyclap.controller.fragment.subFragment.devis
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.edouardondo.moneyclap.R
+import com.stepstone.stepper.Step
+import com.stepstone.stepper.VerificationError
 
-class EditDevisFragment : Fragment() {
-
+class StepThreeFragment : Fragment() , Step {
 
 
     override fun onCreateView(
@@ -17,11 +17,20 @@ class EditDevisFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView: View = inflater.inflate(R.layout.fragment_edit_devis, container, false)
-
-        Toast.makeText(context, "EDIT FRAGMENT", Toast.LENGTH_SHORT).show()
+        val rootView : View = inflater.inflate(R.layout.fragment_step_three, container, false)
 
         return rootView
     }
 
+    override fun verifyStep(): VerificationError? {
+        return null
+    }
+
+    override fun onSelected() {
+
+    }
+
+    override fun onError(error: VerificationError) {
+
+    }
 }
