@@ -71,8 +71,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@id/view_from"
                 android:background="@android:color/transparent"
-                android:enabled="false"
-                android:hint="@string/somme_envoyer"
+                android:hint= "@string/somme_envoyer"
                 android:inputType="numberSigned"
                 android:paddingStart="10dp"
                 android:textColor="@color/black"
@@ -124,7 +123,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:checked="true"
+                    android:checked="false"
                     android:text="@string/oui" />
 
                 <RadioButton

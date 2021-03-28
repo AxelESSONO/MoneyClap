@@ -5,15 +5,24 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:padding="10dp"
-    android:gravity="center"
     tools:context=".controller.fragment.subFragment.devis.StepOneFragment">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/money_clap_logo"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"/>
 
     <RelativeLayout
         android:id="@+id/receiver_or_sender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/relative_choice"
-        android:layout_marginBottom="1dp">
+        android:layout_below="@id/logo"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,6 +63,7 @@
     <RelativeLayout
         android:id="@+id/relative_choice"
         android:layout_width="match_parent"
+        android:layout_below="@id/receiver_or_sender"
         android:gravity="center"
         android:layout_height="370dp">
 
