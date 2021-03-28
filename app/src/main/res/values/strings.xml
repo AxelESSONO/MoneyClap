@@ -11,8 +11,7 @@
     <string name="beneficiaire">Bénéficiaire</string>
     <string name="envoyer_depuis">Pays expéditeur</string>
     <string name="somme_envoyer">Somme à envoyer</string>
-    <string name="euros">EUROS</string>
-    <string name="frais_inclus">Frais inclus :</string>
+    <string name="frais_inclus">Frais inclus ? :</string>
     <string name="oui">Oui</string>
     <string name="non">Non</string>
     <string name="envoyer_vers">Pays destinataire :</string>
@@ -30,5 +29,9 @@
     <string name="received_amount">Partir de la somme à recevoir ?</string>
     <string name="gabon_france"><![CDATA[Gabon -> France]]></string>
     <string name="france_gabon"><![CDATA[France -> Gabon]]></string>
+    <string name="with_fee">Voulez-vous inclure les frais ?</string>
+    <string name="cfa">FCFA</string>
+    <string name="euros">EUROS</string>
+
 
 </resources>
