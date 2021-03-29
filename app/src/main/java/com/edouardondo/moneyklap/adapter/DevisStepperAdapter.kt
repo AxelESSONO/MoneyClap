@@ -15,7 +15,7 @@ class DevisStepperAdapter(var fm: FragmentManager, var context: Context) :
 
     override fun getCount(): Int = titleList.size
 
-    override fun createStep(position: Int): Step {
+    override fun createStep(position: Int): Step? {
 
         val step = when(position){
             0 -> StepOneFragment()
@@ -27,7 +27,7 @@ class DevisStepperAdapter(var fm: FragmentManager, var context: Context) :
         val b = Bundle()
         b.putInt(CURRENT_STEP_POSITION_KEY, position)
         step.arguments = b
-        return step
+        return null
     }
 
     override fun getViewModel(position: Int): StepViewModel {
@@ -54,6 +54,6 @@ class DevisStepperAdapter(var fm: FragmentManager, var context: Context) :
 
     companion object{
         const val CURRENT_STEP_POSITION_KEY = "CURRENT_STEP_POSITION_KEY"
-        val titleList : List<String> = mutableListOf("Step 0", "Step 1", "Step 3")
+        val titleList : List<String> = mutableListOf("Expéditeur - Destinataire", "Moyen de paiement", "Détail du dévis")
     }
 }

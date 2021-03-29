@@ -2,7 +2,6 @@ package com.edouardondo.moneyklap.controller.fragment.subFragment.devis
 
 import android.animation.ObjectAnimator
 import android.animation.TimeInterpolator
-import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -17,19 +16,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.edouardondo.moneyklap.R
+import com.edouardondo.moneyklap.controller.activity.EditDevisActivity
 import com.google.android.material.snackbar.Snackbar
 import com.rilixtech.widget.countrycodepicker.Country
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker
-import com.stepstone.stepper.Step
 import com.stepstone.stepper.VerificationError
 
 
-class StepOneFragment : Fragment(), Step {
-
-    lateinit var sendDataToStepTwo: SendDataToStepTwo
+class StepOneFragment : Fragment() {
 
     lateinit var from: CardView
     lateinit var to: CardView
+
+    lateinit var communicator: CommunicatorFragmentOneToFragmentTwo
 
     /** =================== Radio Button ===================*/
     lateinit var radioYes: RadioButton
@@ -50,9 +49,11 @@ class StepOneFragment : Fragment(), Step {
     lateinit var currencyFrom: TextView
     lateinit var currencyTo: TextView
     lateinit var logo: ImageView
+    lateinit var nextStep: LinearLayout
+    lateinit var previousStep: LinearLayout
 
     /** ================== Direction =====================*/
-    var directionTransaction: String = "FRAGA"
+    private var directionTransaction: String = "FRANCE"
 
     /** FRANCE ==> GABON*/
     var startCalcul: String = "from"
@@ -73,11 +74,16 @@ class StepOneFragment : Fragment(), Step {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val rootView: View = inflater.inflate(R.layout.fragment_step_one, container, false)
 
         /** ========= BindView ======== */
         bindView(rootView)
+
+        communicator = activity as CommunicatorFragmentOneToFragmentTwo
+
+        nextStep = (activity as EditDevisActivity).findViewById(R.id.next_frag)
+        previousStep = (activity as EditDevisActivity).findViewById(R.id.back_frag)
 
         logo.setOnClickListener {
             ccpFrom.setCountryForNameCode("fr")
@@ -113,15 +119,14 @@ class StepOneFragment : Fragment(), Step {
         ccpFrom.setOnCountryChangeListener { selectedCountry ->
             when (selectedCountry?.name) {
                 "France" -> {
-                    showCountrySelected(rootView, selectedCountry?.name, Color.BLACK)
+                    showCountrySelected(rootView, selectedCountry.name, Color.BLACK)
                     ccpTo.setCountryForNameCode("ga")
-                    directionTransaction = "FRAGA"
-
+                    directionTransaction = "FRANCE"
                 }
                 "Gabon" -> {
-                    showCountrySelected(rootView, selectedCountry?.name, Color.BLACK)
+                    showCountrySelected(rootView, selectedCountry.name, Color.BLACK)
                     ccpTo.setCountryForNameCode("fr")
-                    directionTransaction = "GAFRA"
+                    directionTransaction = "GABON"
                 }
                 else -> {
                     showCountrySelected(
@@ -133,13 +138,30 @@ class StepOneFragment : Fragment(), Step {
                     ccpTo.setCountryForNameCode("ga")
                 }
             }
+
             /** ================ SHOW CURRENCY ============  */
             showCurrency(rootView, selectedCountry)
         }
 
         ccpTo.setOnCountryChangeListener { selectedCountry ->
             val countryTo = selectedCountry?.name
-            Toast.makeText(context, countryTo, Toast.LENGTH_SHORT).show()
+        }
+
+        nextStep.setOnClickListener {
+            verifyStep(communicator)
+        }
+
+        previousStep.setOnClickListener {
+            communicator.onPassingData(
+                directionTransaction,
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+                0.0f,
+                0,
+                null
+            )
         }
 
         return rootView
@@ -182,7 +204,7 @@ class StepOneFragment : Fragment(), Step {
     }
 
 
-    override fun verifyStep(): VerificationError? {
+    fun verifyStep(communicator: CommunicatorFragmentOneToFragmentTwo): VerificationError? {
         val verificationError: VerificationError?
         if (feeYes.isChecked == feeNo.isChecked) {
             verificationError = VerificationError("Avec ou sans frais ?")
@@ -193,7 +215,6 @@ class StepOneFragment : Fragment(), Step {
             }
 
             customDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
             val withFee = dialogView.findViewById<Button>(R.id.with_fee)
             val noFee = dialogView.findViewById<Button>(R.id.no_fee)
 
@@ -211,21 +232,19 @@ class StepOneFragment : Fragment(), Step {
 
         } else {
             verificationError = null
-            sendDataToStepTwo.onSendDataToStepTwo(
+            communicator.onPassingData(
                 directionTransaction,
-                80000.0f,
-                80000.0f,
-                80000.0f,
-                80000.0f,
-                800.0f
+                8000.0f,
+                8000.0f,
+                8000.0f,
+                8000.0f,
+                800.0f,
+                2,
+                StepTwoFragment()
             )
         }
         return verificationError
     }
-
-    override fun onSelected() {}
-
-    override fun onError(error: VerificationError) {}
 
     private fun animate(
         target: View, myProperty: Property<View, Float>, from: Float, to: Float, myDuration: Long,
@@ -254,40 +273,32 @@ class StepOneFragment : Fragment(), Step {
         receivedAmountEdt = to.findViewById(R.id.received_amount_edt)
         currencyTo = to.findViewById(R.id.currency_to)
         logo = rootView.findViewById(R.id.logo)
-
-        ccpFrom.setCustomMasterCountries(null)
-        val customMasterCountriesList : List<Country>
-
-        //ccpFrom.setCustomMasterCountriesList()
-
     }
 
     companion object {
         const val DURATION_ANIMATION: Long = 1000
         const val TRANSLATE_Y: Float = 420.0f
-
         const val TAUX_CFA_EURO: Float = 0.0015f
         const val TAUX_EURO_CFA: Float = 655.95f
+        const val FRAGMENT_POSITION: String = "FRAGMENT_POSITION"
+        const val DIRECTION = "DIRECTION"
+        const val AMOUNT_SEND = "AMOUNT_SEND"
+        const val AMOUNT_RECEIVE = "AMOUNT_RECEIVE"
+        const val TOTAL_AMOUNT = "TOTAL_AMOUNT"
+        const val FEE_AMOUNT = "FEE_AMOUNT"
+        const val RETRAIT_AMOUNT = "RETRAIT_AMOUNT"
     }
 
-    interface SendDataToStepTwo {
-        fun onSendDataToStepTwo(
+    interface CommunicatorFragmentOneToFragmentTwo {
+        fun onPassingData(
             directionTransaction: String,
             amountToSend: Float,
             amountToReceive: Float,
             totalAmount: Float,
             feeAmount: Float,
-            retraitAmount: Float
+            retraitAmount: Float,
+            position: Int,
+            stepTwoFragment: StepTwoFragment?
         )
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        try {
-            sendDataToStepTwo = context as SendDataToStepTwo
-        } catch (e: ClassCastException) {
-            throw RuntimeException("$context must implement SendDataToStepTwo")
-        }
     }
 }
