@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.edouardondo.moneyclap">
+    package="com.edouardondo.moneyklap">
 
     <application
         android:allowBackup="true"
@@ -9,27 +9,27 @@
         android:roundIcon="@mipmap/money_clap"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyClap">
-        <activity android:name=".controller.activity.TransactionDetailActivity">
+        <activity android:name="com.edouardondo.moneyklap.controller.activity.TransactionDetailActivity">
 
         </activity>
         <activity
-            android:name=".controller.activity.EditDevisActivity"
+            android:name="com.edouardondo.moneyklap.controller.activity.EditDevisActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MoneyClap.NoActionBar">
 
         </activity>
         <activity
-            android:name=".controller.activity.HomeActivity"
+            android:name="com.edouardondo.moneyklap.controller.activity.HomeActivity"
             android:label="@string/title_activity_home"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MoneyClap.NoActionBar">
 
         </activity>
         <activity
-            android:name=".controller.activity.LoginActivity"
+            android:name="com.edouardondo.moneyklap.controller.activity.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".controller.activity.SplashScreenActivity"
+            android:name="com.edouardondo.moneyklap.controller.activity.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

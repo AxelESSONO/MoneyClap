@@ -32,6 +32,7 @@
                 android:layout_height="40dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
                 android:gravity="start|center_vertical"
                 android:text="@string/envoyer_vers"
                 android:textSize="15sp"
@@ -40,13 +41,16 @@
             <com.rilixtech.widget.countrycodepicker.CountryCodePicker
                 android:id="@+id/ccp_to"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:gravity="center_horizontal|center_vertical"
+                app:ccp_customMasterCountries="GA,FR"
                 app:ccp_defaultNameCode="@string/country_gabon_code"
                 app:ccp_hideNameCode="true"
                 app:ccp_showFullName="true"
-                app:ccp_textSize="18sp" />
+                app:ccp_textSize="18sp"
+                app:ccp_selectionDialogShowSearch="true"/>
 
         </RelativeLayout>
 

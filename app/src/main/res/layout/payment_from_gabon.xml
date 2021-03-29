@@ -5,6 +5,8 @@
     android:orientation="horizontal"
     android:layout_gravity="center"
     android:weightSum="2"
+
+    android:id="@+id/linear_gabon"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
