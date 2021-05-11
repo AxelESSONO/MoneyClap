@@ -10,12 +10,12 @@
     <string name="cat_gories">Catégories</string>
     <string name="beneficiaire">Bénéficiaire</string>
     <string name="envoyer_depuis">Pays expéditeur</string>
-    <string name="somme_envoyer">Somme à envoyer</string>
-    <string name="frais_inclus">Frais inclus ? :</string>
+    <string name="somme_envoyer">Somme à payer</string>
+    <string name="frais_inclus">Frais inclus ?</string>
     <string name="oui">Oui</string>
     <string name="non">Non</string>
     <string name="envoyer_vers">Pays destinataire :</string>
-    <string name="somme_recue">Somme reçue</string>
+    <string name="somme_recue">Somme à recevoir</string>
     <string name="fcfa">FCFA</string>
     <string name="payment_way">Votre moyen de paiement :</string>
     <string name="coupon">Coupon</string>
@@ -26,12 +26,28 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="devis">Votre Devis</string>
-    <string name="received_amount">Partir de la somme à recevoir ?</string>
+    <string name="received_amount">Définir la somme à recevoir ?</string>
     <string name="gabon_france"><![CDATA[Gabon -> France]]></string>
     <string name="france_gabon"><![CDATA[France -> Gabon]]></string>
     <string name="with_fee">Voulez-vous inclure les frais ?</string>
     <string name="cfa">FCFA</string>
     <string name="euros">EUROS</string>
+    <string name="payment_way_close_alert">Veuillez choisir le moyen de paiement en cliquant sur l\'un des moyens de payment</string>
+    <string name="already_subscribed">Déjà inscrit ? Se connecter</string>
+    <string name="copyright">Copyright</string>
+    <string name="_2021">2021</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="confirm_password">Confirmer mon mot de passe</string>
+    <string name="password">mot de passe</string>
+    <string name="e_mail">e-mail</string>
+    <string name="lastname">nom</string>
+    <string name="firstname">prénom</string>
+    <string name="new_admin_register">Nouvel admin? S\'enregistrer</string>
+    <string name="login">Se connecter</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="remember_me">Se souvenir de moi ?</string>
+    <string name="new_quote">Nouveau devis</string>
+    <string name="transfert_rate">Frais de transfert</string>
 
 
 </resources>

@@ -9,6 +9,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/paypal_card"
         android:layout_width="0dp"
         android:layout_height="155dp"
         android:layout_weight="1"
@@ -54,6 +55,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cb_card"
         android:layout_width="0dp"
         android:layout_height="155dp"
         android:layout_weight="1"

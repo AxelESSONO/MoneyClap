@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,81 +8,173 @@
     android:padding="10dp"
     tools:context=".controller.fragment.subFragment.devis.StepOneFragment">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/money_clap_logo"
-        android:scaleType="centerCrop"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/focusTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
 
-    <RelativeLayout
-        android:id="@+id/receiver_or_sender"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_marginTop="10dp">
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="@string/received_amount"
-            android:textColor="@color/colorTextBackground"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/received_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:checked="false"
-                android:text="@string/oui" />
-
-            <RadioButton
-                android:id="@+id/received_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/non" />
-
-        </RadioGroup>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relative_choice"
-        android:layout_width="match_parent"
-        android:layout_below="@id/receiver_or_sender"
-        android:gravity="center"
-        android:layout_height="370dp">
-
-        <include
-            android:id="@+id/from"
+        <RelativeLayout
+            android:id="@+id/receiver_or_sender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            layout="@layout/from_layout"/>
+            android:layout_marginBottom="5dp">
 
-        <include
-            android:id="@+id/to"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/received_amount"
+                android:textColor="@color/colorTextBackground"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/received_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:checked="false"
+                    android:text="@string/oui"
+                    android:textColor="@color/colorTextBackground"/>
+
+                <RadioButton
+                    android:id="@+id/received_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/non"
+                    android:textColor="@color/colorTextBackground"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/frais_inclus"
+                android:textSize="15sp"
+                android:textColor="@color/colorTextBackground"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:checked="false"
+                    android:text="@string/oui"
+                    android:textColor="@color/colorTextBackground"/>
+
+                <RadioButton
+                    android:id="@+id/radio_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/non"
+                    android:textColor="@color/colorTextBackground"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/relative_choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp">
+
+            <include
+                android:id="@+id/from"
+                layout="@layout/from_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <include
+                android:id="@+id/to"
+                layout="@layout/to_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/from"
-            layout="@layout/to_layout"/>
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:divider="@android:color/transparent"
+            android:visibility="gone"
+            app:cardElevation="10dp">
 
-    </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWindowBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="@string/payment_way"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+                <include
+                    android:id="@+id/payment_from_gabon"
+                    layout="@layout/payment_from_gabon"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/payment_from_france"
+                    layout="@layout/payment_from_france" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 </RelativeLayout>

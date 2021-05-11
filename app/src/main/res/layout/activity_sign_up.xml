@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:id="@+id/container_layout"
+    tools:context=".controller.activity.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:elevation="10dp"
+        android:src="@drawable/ic_money_clap"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/firstname_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_person_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <View
+                        android:id="@+id/view_from1"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/firstname_img"
+                        android:background="@drawable/gradient_background"/>
+
+                    <EditText
+                        android:id="@+id/firstname_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/view_from1"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/firstname"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/name_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_person_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <View
+                        android:id="@+id/view_from2"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/name_img"
+                        android:background="@drawable/gradient_background"/>
+
+                    <EditText
+                        android:id="@+id/name_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/view_from2"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/lastname"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
+
+                <!-- Lastname -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/lastname_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_email_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        tools:ignore="ContentDescription" />
+
+                    <View
+                        android:id="@+id/lastname_view_from"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/lastname_img"
+                        android:background="@drawable/gradient_background"/>
+
+                    <EditText
+                        android:id="@+id/email_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/lastname_view_from"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/e_mail"
+                        android:inputType="textEmailAddress"
+                        android:imeOptions="actionNext"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
+
+                <!-- password -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/password_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_lock_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/password_img"
+                        android:background="@drawable/gradient_background"/>
+
+                    <EditText
+                        android:id="@+id/password_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/view"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/transparent_background"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/password_confirm_img"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_lock_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+                    <View
+                        android:id="@+id/view_confirm"
+                        android:layout_width="1dp"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/password_confirm_img"
+                        android:background="@drawable/gradient_background"/>
+
+                    <EditText
+                        android:id="@+id/password_confirm_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_toEndOf="@id/view_confirm"
+                        android:gravity="start|center_vertical"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                        android:background="@android:color/transparent"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/already_subscribed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/already_subscribed"
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/register_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/all_radius_10dp_colortext"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="20dp">
+
+        <ImageView
+            android:id="@+id/copyright_img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_copyright"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/copyright_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/copyright"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="textStart"/>
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/date_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:text="@string/_2021"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

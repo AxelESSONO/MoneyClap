@@ -17,5 +17,6 @@
     <color name="colorLinearLayout">#A1C5F4</color>
     <color name="colorRedWeak">#FFF1F0</color>
     <color name="colorRedLight">#F4847C</color>
+    <color name="custom_transparent">#50FFFFFF</color>
 
 </resources>

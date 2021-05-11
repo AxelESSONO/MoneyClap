@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +24,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="3dp"
@@ -36,7 +35,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,39 +49,40 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:background="@drawable/transparent_background"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/transparent_background">
 
                     <ImageView
                         android:id="@+id/lastname_img"
                         android:layout_width="50dp"
                         android:layout_height="45dp"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_baseline_person_24"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_person_24" />
 
                     <View
                         android:id="@+id/lastname_view_from"
                         android:layout_width="1dp"
                         android:layout_height="45dp"
-                        android:layout_toRightOf="@id/lastname_img"
-                        android:background="@drawable/gradient_background"/>
+                        android:layout_toEndOf="@id/lastname_img"
+                        android:background="@drawable/gradient_background" />
 
                     <EditText
                         android:id="@+id/email_edt"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:layout_toRightOf="@id/lastname_view_from"
+                        android:layout_toEndOf="@id/lastname_view_from"
+                        android:background="@android:color/transparent"
                         android:gravity="start|center_vertical"
-                        android:hint="e-mail"
+                        android:hint="@string/e_mail"
+                        android:imeOptions="actionNext"
                         android:inputType="textEmailAddress"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="5dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@android:color/darker_gray"
-                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-                        android:background="@android:color/transparent"/>
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
 
                 </RelativeLayout>
 
@@ -90,39 +90,40 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:background="@drawable/transparent_background"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/transparent_background">
 
                     <ImageView
                         android:id="@+id/password_img"
                         android:layout_width="50dp"
                         android:layout_height="45dp"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_baseline_lock_24"
                         android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_baseline_lock_24" />
 
                     <View
                         android:id="@+id/view"
                         android:layout_width="1dp"
                         android:layout_height="45dp"
                         android:layout_toRightOf="@id/password_img"
-                        android:background="@drawable/gradient_background"/>
+                        android:background="@drawable/gradient_background" />
 
                     <EditText
                         android:id="@+id/password_edt"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_toRightOf="@id/view"
+                        android:background="@android:color/transparent"
                         android:gravity="start|center_vertical"
                         android:hint="mot de passe"
+                        android:imeOptions="actionDone"
                         android:inputType="textPassword"
                         android:paddingLeft="10dp"
                         android:paddingRight="5dp"
                         android:textColor="@color/black"
                         android:textColorHint="@android:color/darker_gray"
-                        android:textCursorDrawable="@drawable/custom_edit_text_cursor"
-                        android:background="@android:color/transparent"/>
+                        android:textCursorDrawable="@drawable/custom_edit_text_cursor" />
 
                 </RelativeLayout>
 
@@ -133,11 +134,12 @@
                     android:orientation="horizontal">
 
                     <CheckBox
+                        android:id="@+id/rememberMe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Enregistrer"
+                        android:text="@string/remember_me"
                         android:textColor="@color/black" />
 
                     <TextView
@@ -156,10 +158,23 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/all_radius_10dp_colortext"
-                    android:text="Se connecter"
+                    android:text="@string/login"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/register_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/all_radius_10dp_colortext"
+                    android:text="@string/new_admin_register"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
 
@@ -193,9 +208,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Copyright"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textAlignment="textStart"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/app_name"
@@ -203,17 +218,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1.5"
             android:text="@string/app_name"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/date_txt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="textEnd"
             android:text=" 2021"
+            android:textAlignment="textEnd"
             android:textColor="@color/white"
             android:textStyle="bold" />
 

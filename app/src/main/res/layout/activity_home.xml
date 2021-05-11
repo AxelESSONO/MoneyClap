@@ -18,25 +18,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:gravity="center"
-                android:minHeight="?actionBarSize"
-                android:padding="@dimen/appbar_padding"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+                android:src="@drawable/money_clap_logo" />
 
             <SearchView
                 android:id="@+id/research_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/transparent_background"
+                android:layout_toEndOf="@id/logo"
+                android:layout_marginEnd="40dp"
                 android:layout_centerVertical="true"
-                android:layout_margin="10dp"
+                android:textAlignment="textStart"
+                android:queryHint="Que recherchez-vous ?"
+                android:searchIcon="@drawable/ic_search_24"
+                android:queryBackground="@color/black"
                 android:theme="@style/ThemeOverlay.SearchView"/>
 
         </RelativeLayout>

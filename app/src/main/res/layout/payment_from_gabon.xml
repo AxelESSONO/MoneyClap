@@ -1,97 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linear_gabon"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:layout_gravity="center"
-    android:weightSum="2"
-
-    android:id="@+id/linear_gabon"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:weightSum="2">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
+        android:id="@+id/airtel_card"
+        android:layout_width="155dp"
         android:layout_height="155dp"
+        android:layout_margin="5dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/airtel_img"
                 android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:src="@drawable/airtel_money"
+                android:layout_height="110dp"
+                android:layout_alignParentTop="true"
                 android:scaleType="fitXY"
-                android:layout_alignParentTop="true"/>
-
-            <View
-                android:id="@+id/view1"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorWindowBackground"
-                android:layout_below="@id/airtel_img"/>
+                android:src="@drawable/airtel_money" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Airtel money"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:background="@color/colorTextBackground"
-                android:textAlignment="center"
-                android:gravity="center"
+                android:layout_height="45dp"
+                android:layout_below="@id/airtel_img"
                 android:layout_alignParentBottom="true"
-                android:layout_below="@id/view1"/>
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:text="Airtel Money"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
+        android:id="@+id/mobicash_card"
+        android:layout_width="155dp"
         android:layout_height="155dp"
+        android:layout_margin="5dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/mobicash_img"
                 android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:src="@drawable/mobiash"
+                android:layout_height="110dp"
+                android:layout_alignParentTop="true"
                 android:scaleType="fitXY"
-                android:layout_alignParentTop="true"/>
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorWindowBackground"
-                android:layout_below="@id/mobicash_img"/>
+                android:src="@drawable/mobiash" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="MobiCash"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:background="@color/colorTextBackground"
+                android:layout_height="45dp"
+                android:layout_below="@id/mobicash_img"
                 android:layout_alignParentBottom="true"
-                android:textAlignment="center"
+                android:background="@color/colorTextBackground"
                 android:gravity="center"
-                android:layout_below="@id/view2"/>
+                android:text="MobiCash"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
