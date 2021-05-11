@@ -23,7 +23,7 @@ class SplashScreenActivity : AppCompatActivity() {
     lateinit var slogan_text: TextView
     lateinit var progress_circular: ProgressBar
 
-    private val SPLASH_SCREEN: Long = 500
+    private val SPLASH_SCREEN: Long = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

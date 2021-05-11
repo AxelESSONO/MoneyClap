@@ -7,5 +7,6 @@ class Util {
         val SOMME_FT_FR_GA = "FT France Gabon"
         val SOMME_FT_GA_FR = "FT Gabon France"
         val COMPTEUR_TRANS = "Compteur des transaction"
+        val TITLE_LIST : List<String> = mutableListOf("Expéditeur - Destinataire","Détail du dévis")
     }
 }
