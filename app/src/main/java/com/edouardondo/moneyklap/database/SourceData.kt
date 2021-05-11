@@ -5,6 +5,7 @@ import com.edouardondo.moneyklap.common.Util
 import com.edouardondo.moneyklap.model.customer.Customer
 import com.edouardondo.moneyklap.model.devis.Devis
 import com.edouardondo.moneyklap.model.devis.DevisFeature
+import com.edouardondo.moneyklap.model.devis.IntervalleDevis
 import com.edouardondo.moneyklap.model.devis.Transaction
 
 abstract class SourceData {
@@ -1259,5 +1260,27 @@ abstract class SourceData {
             ),
 
             )
+
+        val intervalleDevisAMList = mutableListOf<IntervalleDevis>(
+            IntervalleDevis(100f, 1_000f, 200f),
+            IntervalleDevis(1_000f, 2_000f, 400f),
+            IntervalleDevis(2_000f, 3_000f, 600f),
+            IntervalleDevis(3_000f, 4_000f, 800f),
+            IntervalleDevis(4_000f, 5_000f, 1000f),
+            IntervalleDevis(5_000f, 6_000f, 1200f),
+            IntervalleDevis(6_000f, 7_000f, 1400f),
+            IntervalleDevis(7_000f, 15_000f, 1600f),
+            IntervalleDevis(15_000f, 25_000f, 1800f),
+            IntervalleDevis(25_000f, 40_000f, 2000f),
+            IntervalleDevis(40_000f, 100_000f, 2200f),
+            IntervalleDevis(100_000f, 150_000f, 2400f),
+            IntervalleDevis(150_000f, 250_000f, 2600f),
+            IntervalleDevis(250_000f, 350_000f, 2600f),
+            IntervalleDevis(350_000f, 450_000f, 2600f),
+            IntervalleDevis(450_000f, 650_000f, 2600f),
+            IntervalleDevis(650000f, 1_000_000f, 2600f),
+            IntervalleDevis(1_000_000f, 2_000_000f, 2600f)
+        )
+
     }
 }
