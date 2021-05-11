@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.edouardondo.moneyklap.R
-import com.edouardondo.moneyklap.SessionManager
 import com.edouardondo.moneyklap.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
