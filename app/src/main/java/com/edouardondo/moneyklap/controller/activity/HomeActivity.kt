@@ -18,7 +18,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var viewPager: ViewPager
     lateinit var adapter: ViewPagerAdapter
     lateinit var researchFilter: SearchView
-    lateinit var sessionManager: SessionManager
+    //lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
         researchFilter = findViewById(R.id.research_filter)
 
 
-        sessionManager = SessionManager(this)
+        //sessionManager = SessionManager(this)
 
         /** -------------- Named tabs ------------------**/
         tablayout.addTab(tablayout.newTab().setText("Devis"))
@@ -69,14 +69,14 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-        if (sessionManager.isLogged()){
+      /*  if (sessionManager.isLogged()){
             val userEmail = sessionManager.getEmail()
             val userId = sessionManager.getUserId()
-        }
+        }*/
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+ /*   override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
@@ -92,5 +92,5 @@ class HomeActivity : AppCompatActivity() {
             }
         }
         return true
-    }
+    }*/
 }

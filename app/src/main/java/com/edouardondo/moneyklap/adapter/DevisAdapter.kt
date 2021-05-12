@@ -22,8 +22,7 @@ class DevisAdapter(
     }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DevisHolder {
-        val rootView =
-            LayoutInflater.from(parent.context).inflate(R.layout.devis_layout, parent, false)
+        val rootView = LayoutInflater.from(parent.context).inflate(R.layout.devis_layout, parent, false)
         return DevisHolder(rootView)
     }
 

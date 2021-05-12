@@ -48,6 +48,9 @@
     <string name="remember_me">Se souvenir de moi ?</string>
     <string name="new_quote">Nouveau devis</string>
     <string name="transfert_rate">Frais de transfert</string>
+    <string name="type_amount">Saisir le montant</string>
+    <string name="from_gabon">Depuis le Gabon</string>
+    <string name="from_france">Depuis la france</string>
 
 
 </resources>

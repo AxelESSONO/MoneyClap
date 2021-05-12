@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.edouardondo.moneyklap.R
 import com.edouardondo.moneyklap.adapter.DevisAdapter
 import com.edouardondo.moneyklap.controller.activity.EditDevisActivity
+import com.edouardondo.moneyklap.controller.activity.RateActivity
 import com.edouardondo.moneyklap.database.SourceData
 
 @Suppress("DEPRECATION")
@@ -27,17 +27,12 @@ class DevisFragment : Fragment() {
     lateinit var editDevisButton: Button
     lateinit var seeRateBtn: Button
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_devis, container, false)
 
         binView(rootView)
-
 
         //val array = SourceData.devisList
 
@@ -60,7 +55,8 @@ class DevisFragment : Fragment() {
         }
 
         seeRateBtn.setOnClickListener {
-            val intent = Intent(context, )
+            val intent = Intent(context, RateActivity::class.java)
+            context?.startActivity(intent)
         }
 
         return rootView

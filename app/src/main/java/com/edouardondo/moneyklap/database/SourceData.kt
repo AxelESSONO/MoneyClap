@@ -2,6 +2,7 @@ package com.edouardondo.moneyklap.database
 
 import com.edouardondo.moneyklap.R
 import com.edouardondo.moneyklap.common.Util
+import com.edouardondo.moneyklap.model.TransfertRate
 import com.edouardondo.moneyklap.model.customer.Customer
 import com.edouardondo.moneyklap.model.devis.Devis
 import com.edouardondo.moneyklap.model.devis.DevisFeature
@@ -1282,5 +1283,27 @@ abstract class SourceData {
             IntervalleDevis(1_000_000f, 2_000_000f, 2600f)
         )
 
+        val transfertRateList = mutableListOf<TransfertRate>(
+           TransfertRate("Gabon", 1000f, 2000f, 200f, 500f, false),
+           TransfertRate("Gabon", 2000.1f, 3000f, 400f, 600f, false),
+           TransfertRate("Gabon", 3000.1f, 4000f, 600f, 700f, false),
+           TransfertRate("Gabon", 4000.1f, 5000f, 800f, 800f, false),
+           TransfertRate("Gabon", 5000.1f, 6000f, 1000f, 900f, false),
+           TransfertRate("Gabon", 6000.1f, 7000f, 1200f, 1000f, false),
+           TransfertRate("Gabon", 7000.1f, 8000f, 1300f, 1100f, false),
+           TransfertRate("Gabon", 8000.1f, 9000f, 1400f, 1200f, false),
+           TransfertRate("Gabon", 9000.1f, 10000f, 1500f, 1300f, false),
+           TransfertRate("Gabon", 10000.1f, 11000f, 1600f, 1400f, false),
+           TransfertRate("Gabon", 11000.1f, 12000f, 1700f, 1500f, false),
+           TransfertRate("Gabon", 12000.1f, 13000f, 1800f, 1600f, false),
+           TransfertRate("Gabon", 13000.1f, 14000f, 2000f, 1700f, false),
+           TransfertRate("Gabon", 14000.1f, 15000f, 2400f, 1800f, false),
+           TransfertRate("Gabon", 15000.1f, 16000f, 2500f, 1900f, false),
+           TransfertRate("Gabon", 16000.1f, 17000f, 2600f, 2000f, false),
+           TransfertRate("Gabon", 17000.1f, 18000f, 2700f, 2500f, false),
+           TransfertRate("Gabon", 18000.1f, 19000f, 2700f, 2500f, false),
+           TransfertRate("Gabon", 19000.1f, 20000f, 2800f, 3000f, false),
+           TransfertRate("Gabon", 20000.1f, 21000f, 2800f, 3000f, false),
+        )
     }
 }

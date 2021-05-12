@@ -6,12 +6,15 @@
 
     <color name="black">#FF000000</color>
     <color name="blackLight">#FF323131</color>
+    <color name="colorGray">#4E4C4C</color>
+    <color name="colorGrayLight">#AFAEAE</color>
 
     <color name="colorSecondary">#FFF25652</color>
 
     <color name="white">#FFFFFFFF</color>
     <color name="colorTextBackground">#0d044e</color>
     <color name="colorTextBackgroundSecondary">#16068E</color>
+    <color name="colorBleuLight">#C0CFEA</color>
     <color name="colorWindowBackground">#FFE8EBEF</color>
 
     <color name="colorLinearLayout">#A1C5F4</color>
